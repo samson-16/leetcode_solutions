@@ -3,12 +3,20 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        for i in range(len(nums)-1):
+        count = [0] * (max(nums)+1)
 
-            min_index = i
-            for j in range(i+1, len(nums)):
-                if nums[j] < nums[min_index]:
-                    min_index = j
-            nums[i],nums[min_index] = nums[min_index],  nums[i]
+        for i in nums:
+            count[i] += 1
+        target =0
+        for i , val in enumerate(count):
+            # for j in range(i+1):
+            for j in range(val):
+                nums[target] = i
+
+                target+=1
         return nums
+        
+
+
+
         
