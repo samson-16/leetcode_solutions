@@ -1,14 +1,12 @@
 class Solution:
     def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
-        for i in range(len(heights)):
-            max_index= i
+        people ={}
 
-            for j in range(i+1,len(heights)):
-                if heights[j] > heights[max_index]:
-                    max_index = j
-            heights[i], heights[max_index] = heights[max_index], heights[i]
-            
-            names[i], names[max_index] = names[max_index], names[i]
-        return names
+        for i in range(len(heights)):
+            people[heights[i]] = names[i]
+        people_sort = sorted(people.items(), key= lambda a: a[0], reverse= True)
+        
+        return [x[1] for x in people_sort]
+
 
         
