@@ -11,11 +11,11 @@ class Solution:
                 costs[target] = index
                 target +=1
         count =0
-        print(costs)
-        for cost in costs:
-            if cost<=coins:
-                coins-=cost
-                count+=1
+        for i in costs:
+            if i>coins:
+                return count
+            coins-=i
+            count+=1
         return count
 
 
