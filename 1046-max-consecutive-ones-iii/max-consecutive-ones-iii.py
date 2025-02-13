@@ -3,8 +3,7 @@ class Solution:
         left=0
         max_len =0
         count=0
-        # if nums ==[0,0,0,0]:
-        #     return 0
+    
         for right in range(len(nums)):
             if nums[right]==0:
                 count+=1
