@@ -1,7 +1,7 @@
-# Last updated: 5/14/2025, 10:37:46 AM
+# Last updated: 6/12/2025, 11:58:42 PM
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-            ans =0
-            for num in nums:
-                ans^=num
-            return ans
+        ans =0
+        for num in nums:
+            ans^=num
+        return ans
