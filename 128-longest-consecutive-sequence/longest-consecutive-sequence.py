@@ -6,11 +6,12 @@ class Solution:
         for num in seen:
             count =1
             if num - 1 not in seen:
-                cur = num
-                while cur +1 in seen:
-                    cur +=1
-                    count +=1
-                
+                for i in range(1, len(nums)+1):
+                    if num + i in seen:
+                        count +=1
+                    else:
+                        break
+                # print(count)
             max_count = max(count,max_count)
         return max_count
                     
