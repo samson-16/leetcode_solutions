@@ -6,19 +6,13 @@ class Solution:
 
             if stone == stones[-1]:
                 return True
-            if stone >  stones[-1]:
-                return False
 
+            for step in [k-1, k, k+1]:
+                if step>0 and stone + step in seen:
+                    if dp(stone + step, step):
+                        return True
            
-            if k>0 and stone + k in seen:
-                if dp(stone+k, k):
-                    return True
-            if k> 0 and stone + k+1 in seen:
-                if dp(stone + k+1, k+1):
-                    return True
-            if k>0 and stone + k-1 in seen:
-                if dp(stone + k -1, k-1):
-                    return True
+           
             return False
         if stones[1] !=1:
             return False
